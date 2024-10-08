@@ -4,7 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+ 
 import { Slider } from '@/components/ui/slider';
 import { ComplexityChart } from './components/ComplexityChart';
 import { ComplexityAnimation } from './components/ComplexityAnimation';

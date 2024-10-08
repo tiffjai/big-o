@@ -69,7 +69,7 @@ function animateBinarySearch(svg: d3.Selection<SVGSVGElement, unknown, null, und
       .attr("y", (d) => y(d))
       .attr("width", x.bandwidth())
       .attr("height", (d) => height - margin.bottom - y(d))
-      .attr("fill", (d, i) => {
+      .attr("fill", ( _ , i) => {
         if (i === mid) return "red";
         if (i >= low && i <= high) return "orange";
         return "steelblue";
@@ -175,11 +175,11 @@ function animateBubbleSort(svg: d3.Selection<SVGSVGElement, unknown, null, undef
       .data(arr)
       .join("rect")
       .attr("class", "bar")
-      .attr("x", (d, index) => x(String(index)) || 0)
+      .attr("x", ( _, index) => x(String(index)) || 0)
       .attr("y", d => y(d))
       .attr("width", x.bandwidth())
       .attr("height", d => height - margin.bottom - y(d))
-      .attr("fill", (d, index) => {
+      .attr("fill", ( _, index) => {
         if (index === i || index === j) return "red";
         return "steelblue";
       });
@@ -224,11 +224,11 @@ function animateMergeSort(svg: d3.Selection<SVGSVGElement, unknown, null, undefi
       .data(arr)
       .join("rect")
       .attr("class", "bar")
-      .attr("x", (d, i) => x(String(i)) || 0)
+      .attr("x", ( _, i) => x(String(i)) || 0)
       .attr("y", d => y(d))
       .attr("width", x.bandwidth())
       .attr("height", d => height - margin.bottom - y(d))
-      .attr("fill", (d, i) => highlightIndices.includes(i) ? "red" : "steelblue");
+      .attr("fill", (_, i) => highlightIndices.includes(i) ? "red" : "steelblue");
   }
 
   updateBars(data);
@@ -303,11 +303,11 @@ function animateQuickSort(svg: d3.Selection<SVGSVGElement, unknown, null, undefi
       .data(arr)
       .join("rect")
       .attr("class", "bar")
-      .attr("x", (d, i) => x(String(i)) || 0)
+      .attr("x", (_, i) => x(String(i)) || 0)
       .attr("y", d => y(d))
       .attr("width", x.bandwidth())
       .attr("height", d => height - margin.bottom - y(d))
-      .attr("fill", (d, i) => {
+      .attr("fill", (_, i) => {
         if (i === pivotIndex) return "yellow";
         if (highlightIndices.includes(i)) return "red";
         return "steelblue";
@@ -367,11 +367,11 @@ function animateHeapSort(svg: d3.Selection<SVGSVGElement, unknown, null, undefin
       .data(arr)
       .join("rect")
       .attr("class", "bar")
-      .attr("x", (d, i) => x(String(i)) || 0)
+      .attr("x", (_, i) => x(String(i)) || 0)
       .attr("y", d => y(d))
       .attr("width", x.bandwidth())
       .attr("height", d => height - margin.bottom - y(d))
-      .attr("fill", (d, i) => highlightIndices.includes(i) ? "red" : "steelblue");
+      .attr("fill", (_, i) => highlightIndices.includes(i) ? "red" : "steelblue");
   }
 
   updateBars(data);
